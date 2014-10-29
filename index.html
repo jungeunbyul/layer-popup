@@ -5,9 +5,12 @@
 <script type="text/javascript" src="../common/scripts/jquery-1.4.4.min.js"></script>
 <link rel="stylesheet" type="text/css" href="" />
 <title>Document</title>
+<style type="text/css">
+.layerBg { position:fixed; top:0; left:0; width:100%; height:100%; z-index:3; background:#000; filter:alpha(opacity=70); opacity:0.7; -moz-opacity:0.7;}
+</style>
 </head>
 <body>
-
+<div class="layerBg"></div><!-- 반투명 배경-->
 <a href="#layer" onclick="layerOpen(this); return false;"><span class="tts">조회하기</span></a>
  <div id="layer">
 	<div class="layerBox">
