@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="../common/scripts/jquery-1.4.4.min.js"></script>
+<link rel="stylesheet" type="text/css" href="" />
+<title>Document</title>
+</head>
+<body>
+
+<a href="#layer" onclick="layerOpen(this); return false;"><span class="tts">조회하기</span></a>
+ <div id="layer">
+	<div class="layerBox">
+		레이어 내용이 들어갑니다.
+	</div>
+ </div>
+
+ <script type="text/javascript">
+	// 레이어 열기
+	function layerOpen(obj){
+		var oId = "#"+((obj.href).split("#")[1]); // id="layer"
+		$(oId).show();
+		if(800<$(oId).height()){ // 레이어의 height가 800보다 클 때
+			$(oId).css("margin-top",(($(oId).height()/5)*-1)+"px").focus();
+		}else{
+			$(oId).css("margin-top",(($(oId).height()/2)*-1)+"px").focus();
+		};
+		$("body").find(".focusOn").removeClass(".focusOn");
+		$(obj).addClass("focusOn");
+		$(".layerBg").show();
+	}
+
+	//레이어 닫기
+	function layerClose(obj){
+		$(".layerWrap,.layerBg").hide();
+		$("body").find(".focusOn").focus();
+	}
+ </script>
+
+</body>
+</html>
